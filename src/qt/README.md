@@ -61,7 +61,7 @@ To run:
 
 * UI elements like BitAmountField, which inherit from QWidget.
 * `bitstrings.cpp`: automatically generated
-* `bitunits.(h/cpp)`: B1T / mBIT / etc. handling
+* `bitunits.(h/cpp)`: B1T / mB1T / etc. handling
 * `callback.h`
 * `guiconstants.h`: UI colors, app name, etc.
 * `guiutil.h`: several helper functions

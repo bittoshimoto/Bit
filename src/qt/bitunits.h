@@ -41,7 +41,7 @@ public:
      */
     enum class Unit {
         B1T,
-        mBIT,
+        mB1T,
         uBIT,
         SAT
     };
