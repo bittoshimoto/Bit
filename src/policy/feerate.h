@@ -14,7 +14,7 @@
 #include <string>
 #include <type_traits>
 
-const std::string CURRENCY_UNIT = "BIT"; // One formatted unit
+const std::string CURRENCY_UNIT = "B1T"; // One formatted unit
 const std::string CURRENCY_ATOM = "tos"; // One indivisible minimum value unit
 
 /* Used to determine type of fee estimation requested */
@@ -22,7 +22,7 @@ enum class FeeEstimateMode {
     UNSET,        //!< Use default settings based on other criteria
     ECONOMICAL,   //!< Force estimateSmartFee to use non-conservative estimates
     CONSERVATIVE, //!< Force estimateSmartFee to use conservative estimates
-    BIT_KVB,      //!< Use BIT/kvB fee rate unit
+    BIT_KVB,      //!< Use B1T/kvB fee rate unit
     SAT_VB,       //!< Use tos/vB fee rate unit
 };
 

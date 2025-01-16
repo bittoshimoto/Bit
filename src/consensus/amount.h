@@ -12,13 +12,13 @@
 /** Amount in toshis (Can be negative) */
 typedef int64_t CAmount;
 
-/** The amount of toshis in one BIT. */
+/** The amount of toshis in one B1T. */
 static constexpr CAmount COIN = 100000000;
 
 /** No amount larger than this (in toshi) is valid.
  *
  * Note that this constant is *not* the total money supply, which in Bit
- * currently happens to be less than 21,000,000 BIT for various reasons, but
+ * currently happens to be less than 21,000,000 B1T for various reasons, but
  * rather a sanity check. As this sanity check is used by consensus-critical
  * validation code, the exact value of the MAX_MONEY constant is consensus
  * critical; in unusual circumstances like a(nother) overflow bug that allowed

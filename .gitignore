@@ -1,5 +1,4 @@
 *.tar.gz
-
 *.exe
 *.pdb
 src/bit
@@ -44,54 +43,18 @@ src/obj
 share/setup.nsi
 share/qt/Info.plist
 
+# Qt-related files
 src/qt/*.moc
 src/qt/moc_*.cpp
 src/qt/forms/ui_*.h
-
 src/qt/test/moc*.cpp
 
-src/qt/bit-qt.config
-src/qt/bit-qt.creator
-src/qt/bit-qt.creator.user
-src/qt/bit-qt.files
-src/qt/bit-qt.includes
-
-.deps
-.dirstamp
-.libs
-.*.swp
-*~
-*.bak
-*.rej
-*.orig
-*.pyc
-*.o
-*.o-*
-*.a
-*.pb.cc
-*.pb.h
-*.dat
-
-*.log
-*.trs
-*.dmg
-
-*.json.h
-*.raw.h
-
-# Only ignore unexpected patches
-*.patch
-!contrib/guix/patches/*.patch
-!depends/patches/**/*.patch
-
-#libtool object files
-*.lo
-*.la
-
-# Compilation and Qt preprocessor part
-*.qm
+# Exclude specific Makefiles but add exceptions for the ones we want to track
 Makefile
 !depends/Makefile
+!src/qt/Makefile
+!src/qt/test/Makefile
+!src/test/Makefile
 src/qt/bit-qt
 Bit-Qt.app
 
@@ -112,7 +75,7 @@ build
 # Previous releases
 releases
 
-#lcov
+# lcov
 *.gcno
 *.gcda
 /*.info
@@ -123,7 +86,7 @@ coverage_percent.txt
 /cov_tool_wrapper.sh
 qa-assets/
 
-#build tests
+# build tests
 linux-coverage-build
 linux-build
 win32-build
@@ -147,6 +110,6 @@ db4/
 osx_volname
 dist/
 
+# guix-build
 /guix-build-*
-
 /ci/scratch/

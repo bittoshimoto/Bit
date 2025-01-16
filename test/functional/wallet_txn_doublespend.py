@@ -39,7 +39,7 @@ class TxnMallTest(BitTestFramework):
         return self.nodes[0].sendrawtransaction(tx['hex'])
 
     def run_test(self):
-        # All nodes should start with 1,250 BIT:
+        # All nodes should start with 1,250 B1T:
         starting_balance = 1250
 
         # All nodes should be out of IBD.
@@ -68,7 +68,7 @@ class TxnMallTest(BitTestFramework):
         # Coins are sent to node1_address
         node1_address = self.nodes[1].getnewaddress()
 
-        # First: use raw transaction API to send 1240 BIT to node1_address,
+        # First: use raw transaction API to send 1240 B1T to node1_address,
         # but don't broadcast:
         doublespend_fee = Decimal('-.02')
         rawtx_input_0 = {}
@@ -86,7 +86,7 @@ class TxnMallTest(BitTestFramework):
         doublespend = self.nodes[0].signrawtransactionwithwallet(rawtx)
         assert_equal(doublespend["complete"], True)
 
-        # Create two spends using 1 50 BIT coin each
+        # Create two spends using 1 50 B1T coin each
         txid1 = self.spend_txid(fund_foo_txid, find_vout_for_address(self.nodes[0], fund_foo_txid, node0_address_foo), {node1_address: 40})
         txid2 = self.spend_txid(fund_bar_txid, find_vout_for_address(self.nodes[0], fund_bar_txid, node0_address_bar), {node1_address: 20})
 

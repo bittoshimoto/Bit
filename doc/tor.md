@@ -1,4 +1,4 @@
-# TOR SUPPORT IN BIT
+# TOR SUPPORT IN B1T
 
 It is possible to run Bit Core as a Tor onion service, and connect to such services.
 

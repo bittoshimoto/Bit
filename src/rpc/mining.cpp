@@ -443,7 +443,7 @@ static RPCHelpMan getmininginfo()
 }
 
 
-// NOTE: Unlike wallet RPC (which use BIT values), mining RPCs follow GBT (BIP 22) in using toshi amounts
+// NOTE: Unlike wallet RPC (which use B1T values), mining RPCs follow GBT (BIP 22) in using toshi amounts
 static RPCHelpMan prioritisetransaction()
 {
     return RPCHelpMan{"prioritisetransaction",

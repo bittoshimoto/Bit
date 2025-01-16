@@ -131,7 +131,7 @@ class AddressInputTypeGrouping(BitTestFramework):
 
     def make_payment(self, A, B, v, addr_type):
         fee_rate = random.randint(1, 20)
-        self.log.debug(f"Making payment of {v} BIT at fee_rate {fee_rate}")
+        self.log.debug(f"Making payment of {v} B1T at fee_rate {fee_rate}")
         tx = B.sendtoaddress(
             address=A.getnewaddress(address_type=addr_type),
             amount=v,
@@ -147,19 +147,19 @@ class AddressInputTypeGrouping(BitTestFramework):
 
         self.log.info("Creating mixed UTXOs in B's wallet")
         for v in generate_payment_values(3, 10):
-            self.log.debug(f"Making payment of {v} BIT to legacy")
+            self.log.debug(f"Making payment of {v} B1T to legacy")
             A.sendtoaddress(B.getnewaddress(address_type="legacy"), v)
 
         for v in generate_payment_values(3, 10):
-            self.log.debug(f"Making payment of {v} BIT to p2sh")
+            self.log.debug(f"Making payment of {v} B1T to p2sh")
             A.sendtoaddress(B.getnewaddress(address_type="p2sh-segwit"), v)
 
         for v in generate_payment_values(3, 10):
-            self.log.debug(f"Making payment of {v} BIT to bech32")
+            self.log.debug(f"Making payment of {v} B1T to bech32")
             A.sendtoaddress(B.getnewaddress(address_type="bech32"), v)
 
         for v in generate_payment_values(3, 10):
-            self.log.debug(f"Making payment of {v} BIT to bech32m")
+            self.log.debug(f"Making payment of {v} B1T to bech32m")
             A.sendtoaddress(B.getnewaddress(address_type="bech32m"), v)
 
         self.generate(A, 1)

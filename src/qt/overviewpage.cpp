@@ -124,7 +124,7 @@ public:
         return {DECORATION_SIZE + 8 + minimum_text_width, DECORATION_SIZE};
     }
 
-    BitUnit unit{BitUnit::BIT};
+    BitUnit unit{BitUnit::B1T};
 
 Q_SIGNALS:
     //! An intermediate signal for emitting from the `paint() const` member function.
@@ -288,7 +288,7 @@ void OverviewPage::setWalletModel(WalletModel *model)
         });
     }
 
-    // update the display unit, to not use the default ("BIT")
+    // update the display unit, to not use the default ("B1T")
     updateDisplayUnit();
 }
 

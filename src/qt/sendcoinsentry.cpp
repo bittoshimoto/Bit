@@ -94,7 +94,7 @@ void SendCoinsEntry::clear()
     ui->messageTextLabel->hide();
     ui->messageLabel->hide();
 
-    // update the display unit, to not use the default ("BIT")
+    // update the display unit, to not use the default ("B1T")
     updateDisplayUnit();
 }
 

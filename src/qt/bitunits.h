@@ -40,7 +40,7 @@ public:
       @note Source: https://en.bit.it/wiki/Units . Please add only sensible ones
      */
     enum class Unit {
-        BIT,
+        B1T,
         mBIT,
         uBIT,
         SAT

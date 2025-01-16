@@ -471,18 +471,18 @@ was already being broken by the move to descriptors.
   is introduced to the `sendtoaddress`, `sendmany`, `fundrawtransaction` and
   `walletcreatefundedpsbt` RPCs as well as to the experimental new `send`
   RPC. The legacy `feeRate` option in `fundrawtransaction` and
-  `walletcreatefundedpsbt` still exists for setting a fee rate in BIT per 1,000
-  vbytes (BIT/kvB), but it is expected to be deprecated soon to avoid
-  confusion. For these RPCs, the fee rate error message is updated from BIT/kB
-  to tos/vB and the help documentation in BIT/kB is updated to BIT/kvB. The
+  `walletcreatefundedpsbt` still exists for setting a fee rate in B1T per 1,000
+  vbytes (B1T/kvB), but it is expected to be deprecated soon to avoid
+  confusion. For these RPCs, the fee rate error message is updated from B1T/kB
+  to tos/vB and the help documentation in B1T/kB is updated to B1T/kvB. The
   `send` and `sendtoaddress` RPC examples are updated to aid users in creating
   transactions with explicit fee rates. (#20305, #11413)
 
-- The `bumpfee` RPC `fee_rate` option is changed from BIT/kvB to tos/vB and the
+- The `bumpfee` RPC `fee_rate` option is changed from B1T/kvB to tos/vB and the
   help documentation is updated. Users are warned that this is a breaking API
   change, but it should be relatively benign: the large (100,000 times)
-  difference between BIT/kvB and tos/vB units means that a transaction with a
-  fee rate mistakenly calculated in BIT/kvB rather than tos/vB should raise an
+  difference between B1T/kvB and tos/vB units means that a transaction with a
+  fee rate mistakenly calculated in B1T/kvB rather than tos/vB should raise an
   error due to the fee rate being set too low. In the worst case, the
   transaction may send at 1 tos/vB, but as Replace-by-Fee (BIP125 RBF) is active
   by default when an explicit fee rate is used, the transaction fee can be

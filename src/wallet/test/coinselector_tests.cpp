@@ -532,12 +532,12 @@ BOOST_AUTO_TEST_CASE(knapsack_solver_test)
         add_coin(available_coins, *wallet,  4*COIN); // now we have 5+6+7+8+18+20+30+100+200+300+400 = 1094 cents
         const auto result14 = KnapsackSolver(KnapsackGroupOutputs(available_coins, *wallet, filter_confirmed), 95 * CENT, CENT);
         BOOST_CHECK(result14);
-        BOOST_CHECK_EQUAL(result14->GetSelectedValue(), 1 * COIN);  // we should get 1 BIT in 1 coin
+        BOOST_CHECK_EQUAL(result14->GetSelectedValue(), 1 * COIN);  // we should get 1 B1T in 1 coin
         BOOST_CHECK_EQUAL(result14->GetInputSet().size(), 1U);
 
         const auto result15 = KnapsackSolver(KnapsackGroupOutputs(available_coins, *wallet, filter_confirmed), 195 * CENT, CENT);
         BOOST_CHECK(result15);
-        BOOST_CHECK_EQUAL(result15->GetSelectedValue(), 2 * COIN);  // we should get 2 BIT in 1 coin
+        BOOST_CHECK_EQUAL(result15->GetSelectedValue(), 2 * COIN);  // we should get 2 B1T in 1 coin
         BOOST_CHECK_EQUAL(result15->GetInputSet().size(), 1U);
 
         // empty the wallet and start again, now with fractions of a cent, to test small change avoidance
@@ -968,9 +968,9 @@ BOOST_AUTO_TEST_CASE(check_max_weight)
 
     {
         // Scenario 1:
-        // The actor starts with 1x 50.0 BIT and 1515x 0.033 BIT (~100.0 BIT total) unspent outputs
-        // Then tries to spend 49.5 BIT
-        // The 50.0 BIT output should be selected, because the transaction would otherwise be too large
+        // The actor starts with 1x 50.0 B1T and 1515x 0.033 B1T (~100.0 B1T total) unspent outputs
+        // Then tries to spend 49.5 B1T
+        // The 50.0 B1T output should be selected, because the transaction would otherwise be too large
 
         // Perform selection
 
@@ -993,8 +993,8 @@ BOOST_AUTO_TEST_CASE(check_max_weight)
     {
         // Scenario 2:
 
-        // The actor starts with 400x 0.0625 BIT and 2000x 0.025 BIT (75.0 BIT total) unspent outputs
-        // Then tries to spend 49.5 BIT
+        // The actor starts with 400x 0.0625 B1T and 2000x 0.025 B1T (75.0 B1T total) unspent outputs
+        // Then tries to spend 49.5 B1T
         // A combination of coins should be selected, such that the created transaction is not too large
 
         // Perform selection
@@ -1018,7 +1018,7 @@ BOOST_AUTO_TEST_CASE(check_max_weight)
     {
         // Scenario 3:
 
-        // The actor starts with 1515x 0.033 BIT (49.995 BIT total) unspent outputs
+        // The actor starts with 1515x 0.033 B1T (49.995 B1T total) unspent outputs
         // No results should be returned, because the transaction would be too large
 
         // Perform selection
@@ -1059,10 +1059,10 @@ BOOST_AUTO_TEST_CASE(SelectCoins_effective_value_test)
         dummyWallet->SetWalletFlag(WALLET_FLAG_DESCRIPTORS);
         dummyWallet->SetupDescriptorScriptPubKeyMans();
 
-        add_coin(available_coins, *dummyWallet, 100000); // 0.001 BIT
+        add_coin(available_coins, *dummyWallet, 100000); // 0.001 B1T
     }
 
-    CAmount target{99900}; // 0.000999 BIT
+    CAmount target{99900}; // 0.000999 B1T
 
     FastRandomContext rand;
     CoinSelectionParams cs_params{

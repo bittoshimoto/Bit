@@ -225,13 +225,13 @@ class AbandonConflictTest(BitTestFramework):
         assert_equal(double_spend_txid, double_spend['txid'])
         assert_equal(double_spend["walletconflicts"], [txAB1])
 
-        # Verify that B and C's 10 BIT outputs are available for spending again because AB1 is now conflicted
+        # Verify that B and C's 10 B1T outputs are available for spending again because AB1 is now conflicted
         newbalance = alice.getbalance()
         assert_equal(newbalance, balance + Decimal("20"))
         balance = newbalance
 
         # There is currently a minor bug around this and so this test doesn't work.  See Issue #7315
-        # Invalidate the block with the double spend and B's 10 BIT output should no longer be available
+        # Invalidate the block with the double spend and B's 10 B1T output should no longer be available
         # Don't think C's should either
         self.nodes[0].invalidateblock(self.nodes[0].getbestblockhash())
         newbalance = alice.getbalance()

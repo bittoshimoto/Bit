@@ -160,13 +160,13 @@ bool OptionsModel::Init(bilingual_str& error)
 
     // Display
     if (!settings.contains("DisplayBitUnit")) {
-        settings.setValue("DisplayBitUnit", QVariant::fromValue(BitUnit::BIT));
+        settings.setValue("DisplayBitUnit", QVariant::fromValue(BitUnit::B1T));
     }
     QVariant unit = settings.value("DisplayBitUnit");
     if (unit.canConvert<BitUnit>()) {
         m_display_bit_unit = unit.value<BitUnit>();
     } else {
-        m_display_bit_unit = BitUnit::BIT;
+        m_display_bit_unit = BitUnit::B1T;
         settings.setValue("DisplayBitUnit", QVariant::fromValue(m_display_bit_unit));
     }
 

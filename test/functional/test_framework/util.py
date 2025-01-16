@@ -44,11 +44,11 @@ def assert_fee_amount(fee, tx_size, feerate_BIT_kvB):
     assert isinstance(tx_size, int)
     target_fee = get_fee(tx_size, feerate_BIT_kvB)
     if fee < target_fee:
-        raise AssertionError("Fee of %s BIT too low! (Should be %s BIT)" % (str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s B1T too low! (Should be %s B1T)" % (str(fee), str(target_fee)))
     # allow the wallet's estimation to be at most 2 bytes off
     high_fee = get_fee(tx_size + 2, feerate_BIT_kvB)
     if fee > high_fee:
-        raise AssertionError("Fee of %s BIT too high! (Should be %s BIT)" % (str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s B1T too high! (Should be %s B1T)" % (str(fee), str(target_fee)))
 
 
 def assert_equal(thing1, thing2, *args):
@@ -203,7 +203,7 @@ def assert_array_result(object_array, to_match, expected, should_not_find=False)
 
 
 def check_json_precision():
-    """Make sure json library being used does not lose precision converting BIT values"""
+    """Make sure json library being used does not lose precision converting B1T values"""
     n = Decimal("20000000.00000003")
     toshis = int(json.loads(json.dumps(float(n))) * 1.0e8)
     if toshis != 2000000000000003:
@@ -236,10 +236,10 @@ def ceildiv(a, b):
 
 
 def get_fee(tx_size, feerate_bit_kvb):
-    """Calculate the fee in BIT given a feerate is BIT/kvB. Reflects CFeeRate::GetFee"""
+    """Calculate the fee in B1T given a feerate is B1T/kvB. Reflects CFeeRate::GetFee"""
     feerate_sat_kvb = int(feerate_bit_kvb * Decimal(1e8)) # Fee in tos/kvb as an int to avoid float precision errors
     target_fee_sat = ceildiv(feerate_sat_kvb * tx_size, 1000) # Round calculated fee up to nearest tos
-    return target_fee_sat / Decimal(1e8) # Return result in  BIT
+    return target_fee_sat / Decimal(1e8) # Return result in  B1T
 
 
 def toshi_round(amount):

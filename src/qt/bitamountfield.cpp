@@ -125,7 +125,7 @@ public:
 
             const QFontMetrics fm(fontMetrics());
             int h = lineEdit()->minimumSizeHint().height();
-            int w = GUIUtil::TextWidth(fm, BitUnits::format(BitUnit::BIT, BitUnits::maxMoney(), false, BitUnits::SeparatorStyle::ALWAYS));
+            int w = GUIUtil::TextWidth(fm, BitUnits::format(BitUnit::B1T, BitUnits::maxMoney(), false, BitUnits::SeparatorStyle::ALWAYS));
             w += 2; // cursor blinking space
 
             QStyleOptionSpinBox opt;
@@ -150,7 +150,7 @@ public:
     }
 
 private:
-    BitUnit currentUnit{BitUnit::BIT};
+    BitUnit currentUnit{BitUnit::B1T};
     CAmount singleStep{CAmount(100000)}; // toshis
     mutable QSize cachedMinimumSizeHint;
     bool m_allow_empty{true};

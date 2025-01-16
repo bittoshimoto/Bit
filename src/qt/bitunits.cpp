@@ -21,7 +21,7 @@ BitUnits::BitUnits(QObject *parent):
 QList<BitUnit> BitUnits::availableUnits()
 {
     QList<BitUnit> unitlist;
-    unitlist.append(Unit::BIT);
+    unitlist.append(Unit::B1T);
     unitlist.append(Unit::mBIT);
     unitlist.append(Unit::uBIT);
     unitlist.append(Unit::SAT);
@@ -31,7 +31,7 @@ QList<BitUnit> BitUnits::availableUnits()
 QString BitUnits::longName(Unit unit)
 {
     switch (unit) {
-    case Unit::BIT: return QString("BIT");
+    case Unit::B1T: return QString("B1T");
     case Unit::mBIT: return QString("mBIT");
     case Unit::uBIT: return QString::fromUtf8("µBIT (bits)");
     case Unit::SAT: return QString("toshi");
@@ -42,7 +42,7 @@ QString BitUnits::longName(Unit unit)
 QString BitUnits::shortName(Unit unit)
 {
     switch (unit) {
-    case Unit::BIT: return longName(unit);
+    case Unit::B1T: return longName(unit);
     case Unit::mBIT: return longName(unit);
     case Unit::uBIT: return QString("bits");
     case Unit::SAT: return QString("tos");
@@ -53,7 +53,7 @@ QString BitUnits::shortName(Unit unit)
 QString BitUnits::description(Unit unit)
 {
     switch (unit) {
-    case Unit::BIT: return QString("Bits");
+    case Unit::B1T: return QString("Bits");
     case Unit::mBIT: return QString("Milli-Bits (1 / 1" THIN_SP_UTF8 "000)");
     case Unit::uBIT: return QString("Micro-Bits (bits) (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     case Unit::SAT: return QString("toshi (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
@@ -64,7 +64,7 @@ QString BitUnits::description(Unit unit)
 qint64 BitUnits::factor(Unit unit)
 {
     switch (unit) {
-    case Unit::BIT: return 100'000'000;
+    case Unit::B1T: return 100'000'000;
     case Unit::mBIT: return 100'000;
     case Unit::uBIT: return 100;
     case Unit::SAT: return 1;
@@ -75,7 +75,7 @@ qint64 BitUnits::factor(Unit unit)
 int BitUnits::decimals(Unit unit)
 {
     switch (unit) {
-    case Unit::BIT: return 8;
+    case Unit::B1T: return 8;
     case Unit::mBIT: return 5;
     case Unit::uBIT: return 2;
     case Unit::SAT: return 0;
@@ -232,7 +232,7 @@ namespace {
 qint8 ToQint8(BitUnit unit)
 {
     switch (unit) {
-    case BitUnit::BIT: return 0;
+    case BitUnit::B1T: return 0;
     case BitUnit::mBIT: return 1;
     case BitUnit::uBIT: return 2;
     case BitUnit::SAT: return 3;
@@ -243,7 +243,7 @@ qint8 ToQint8(BitUnit unit)
 BitUnit FromQint8(qint8 num)
 {
     switch (num) {
-    case 0: return BitUnit::BIT;
+    case 0: return BitUnit::B1T;
     case 1: return BitUnit::mBIT;
     case 2: return BitUnit::uBIT;
     case 3: return BitUnit::SAT;
