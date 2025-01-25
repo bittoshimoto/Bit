@@ -150,6 +150,7 @@ public:
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("seed1.followthebit.org");
+        vSeeds.emplace_back("seed2.followthebit.org");
         vSeeds.emplace_back("51.89.172.76");
         vSeeds.emplace_back("51.89.172.97");
 
