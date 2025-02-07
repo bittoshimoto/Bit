@@ -187,7 +187,7 @@ public:
                 { 40036, uint256S("0x00000000000000015dfcefbfc6ed1538821235329e3d329b0b282aba0601b422")},
                 { 43490, uint256S("0x0000000000000009d1b66e26b71056def15afd240637d1ddae06c2dd8a221d50")},
                 { 54887, uint256S("0x000000000000000f8990e24aa9418fbd07ceece32f2cd2e72b6866072f739bb9")}
-            
+            }
         };
 
         m_assumeutxo_data = MapAssumeutxo{
