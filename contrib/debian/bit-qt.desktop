@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Bit Core
+Comment=Connect to the Bit P2P Network
+Comment[de]=Verbinde mit dem Bit peer-to-peer Netzwerk
+Comment[fr]=Bit, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Bit, eşten eşe kriptografik sanal para birimi
+Exec=bit-qt %u
+Terminal=false
+Type=Application
+Icon=bit128
+MimeType=x-scheme-handler/bit;
+Categories=Office;Finance;

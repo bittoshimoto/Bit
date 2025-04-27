@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  bitd The bit core server.
+#
+#
+# chkconfig: 345 80 20
+# description: bitd
+# processname: bitd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/bitd, see below
+if [ -f /etc/sysconfig/bitd ]; then
+        . /etc/sysconfig/bitd
+fi
+
+RETVAL=0
+
+prog=bitd
+# you can override the lockfile via PEPECOIND_LOCKFILE in /etc/sysconfig/bitd
+lockfile=${PEPECOIND_LOCKFILE-/var/lock/subsys/bitd}
+
+# bitd defaults to /usr/bin/bitd, override with PEPECOIND_BIN
+bitd=${PEPECOIND_BIN-/usr/bin/bitd}
+
+# bitd opts default to -disablewallet, override with PEPECOIND_OPTS
+bitd_opts=${PEPECOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $bitd $bitd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

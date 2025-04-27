@@ -1,0 +1,33 @@
+# /etc/conf.d/bitd: config file for /etc/init.d/bitd
+
+# Config file location
+#PEPECOIND_CONFIGFILE="/etc/bit/bit.conf"
+
+# What directory to write pidfile to?  (created and owned by $PEPECOIND_USER)
+#PEPECOIND_PIDDIR="/var/run/bitd"
+
+# What filename to give the pidfile
+#PEPECOIND_PIDFILE="${PEPECOIND_PIDDIR}/bitd.pid"
+
+# Where to write bitd data (be mindful that the blockchain is large)
+#PEPECOIND_DATADIR="/var/lib/bitd"
+
+# User and group to own bitd process
+#PEPECOIND_USER="bit"
+#PEPECOIND_GROUP="bit"
+
+# Path to bitd executable
+#PEPECOIND_BIN="/usr/bin/bitd"
+
+# Nice value to run bitd under
+#PEPECOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+PEPECOIND_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for bitd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+PEPECOIND_SIGTERM_TIMEOUT=60
