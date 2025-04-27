@@ -6,7 +6,7 @@ Bit Core [B1T]
 
 
 
-**Website:** [bit.org](https://followthebit.org)
+**Website:** [followthebit.org](https://followthebit.org)
 
 
 
