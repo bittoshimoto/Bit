@@ -146,7 +146,7 @@ const uint32_t DERIVE_ACCOUNT_KEY = 0 | BIP32_HARDENED_KEY_LIMIT;
 enum ChainDerivationValue: uint32_t {
     DERIVE_EXTERNAL_LEGACY =    0 | BIP32_HARDENED_KEY_LIMIT, // Bitcoin value, used in 1.0.0+
     DERIVE_INTERNAL        =    1 | BIP32_HARDENED_KEY_LIMIT, // default internal value
-    DERIVE_EXTERNAL        = 3434 | BIP32_HARDENED_KEY_LIMIT, // external value, used when BIP-44 is active
+    DERIVE_EXTERNAL        = 3141 | BIP32_HARDENED_KEY_LIMIT, // external value, used when BIP-44 is active
 };
 
 class CBlockIndex;
