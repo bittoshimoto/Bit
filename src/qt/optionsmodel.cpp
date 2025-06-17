@@ -76,7 +76,7 @@ void OptionsModel::Init(bool resetSettings)
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
 
     if (!settings.contains("strThirdPartyTxUrls"))
-        settings.setValue("strThirdPartyTxUrls", "https://pepeexplorer.com/tx/%s");
+        settings.setValue("strThirdPartyTxUrls", "https://b1texplorer.com/tx/%s");
     strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "").toString();
 
     if (!settings.contains("fCoinControlFeatures"))
