@@ -1,12 +1,12 @@
 <h1 align="center">
-<img src="https://b1tcore.org/images/followthebit.png" alt="Bit" width="300"/>
+<img src="https://b1tcore.org/bit-logo.png" alt="Bit" width="300"/>
 <br/><br/>
 Bit Core [B1T]
 </h1>
 
 
 
-**Website:** [followthebit.org](https://followthebit.org)
+**Website:** [b1tcore.org](https://b1tcore.org)
 
 
 
