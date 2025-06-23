@@ -65,7 +65,18 @@ For a browsable reference, see the [Bitcoin Core RPC docs](https://developer.bit
 
 ---
 
-## 🌐 Communities
+## Ports
+
+A node can expose 2 different ports: one port for the **Peer to Peer Network** (P2P) to communicate with other nodes, and a second port for access to the RPC API. By default, the ports are configured as follows:
+
+| Function | mainnet | testnet | regtest |
+| :------- | ------: | ------: | ------: |
+| **P2P**  | 33317   | 44417   | 22217   |
+| **RPC**  | 33318   | 44418   | 22218   |
+
+To configure them use the `-port` and `-rpcport` parameters.
+
+## 🌐 Communities 🐰
 
 Join our community to discuss, share memes, ask questions, or show off your projects:
 
