@@ -7,7 +7,8 @@
   <a href="README_vi.md">VI</a> |
   <a href="README_fr.md">FR</a> |
   <a href="README_ja.md">JA</a> |
-  <a href="README_de.md">DE</a>
+  <a href="README_de.md">DE</a> |
+  <a href="README_es.md">ES</a>
 </p>
 
 <h1 align="center">
