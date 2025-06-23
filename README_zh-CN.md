@@ -61,3 +61,37 @@ Bit Core 的 JSON-RPC 接口具有自我文档功能。运行：
 ```bash
 bit-cli help
 bit-cli help <command>
+
+更多可浏览的参考，请参见 Bitcoin Core RPC 文档 —— 两者接口类似。
+
+🔌 端口
+节点可以开放两个端口：
+
+P2P：点对点网络，与其他节点通信
+
+RPC：访问 JSON-RPC 接口
+
+默认端口配置如下：
+
+功能	mainnet	testnet	regtest
+P2P	33317	44417	22217
+RPC	33318	44418	22218
+
+可通过 -port 和 -rpcport 参数进行配置。
+
+🌐 社区 🐰
+加入我们的社区，一起讨论、分享表情包、提问或展示你的项目：
+
+Reddit： r/FollowTheBit
+
+Discord： https://discord.gg/UevXymWWjD
+
+Telegram： https://t.me/Bittoshimoto
+
+Twitter/X： https://x.com/bittoshimo
+
+⚖️ 许可证
+Bit Core 基于 MIT 许可证发布。
+详见 COPYING 或访问 opensource.org/licenses/MIT。
+
+<br /> <p align="center"> &copy; Bit 开发者 </p> ```
