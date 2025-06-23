@@ -16,6 +16,32 @@
   Bit Core [B1T]
 </h1>
 
+## 🔍 About Bit
+
+Bit is a decentralized, community-first cryptocurrency built on transparency, scarcity and individual empowerment. Relaunched under the motto **“FollowTheBit,”** it uses the proven Scrypt AuxPoW consensus mechanism—allowing secure solo-mining while remaining merge-mining–compatible.
+
+Beyond technology, Bit is a symbol: following the white rabbit means stepping outside inherited systems, breaking free of artificial limits, and choosing truth over trend. Bit isn’t here to replicate the old world—it’s here to rewrite the rules, one block at a time.
+
+---
+
+## 🎯 Our Vision
+
+- **Decentralization by Holders:** True decentralization comes from widespread ownership, not just mining power.
+- **Fee-Based Security:** As block rewards wane, a fast 1-minute block time and modest supply ensure transaction fees remain sufficient to secure the network.
+- **Built-in Scarcity:** A hard cap of ~2.1 million B1T guarantees long-term value preservation.
+
+---
+
+## ⚙️ Technical Specs
+
+- **Coin Supply:** ~2.1 M B1T (hard cap)  
+- **Initial Block Reward:** 5 B1T  
+- **Halving Interval:** every 210 000 blocks  
+- **Block Time:** 1 minute  
+- **Consensus:** Scrypt AuxPoW (merge-mining compatible)
+
+---
+
 **Website:** [b1tcore.org](https://b1tcore.org)
 
 To start your journey with Bit Core, see the [installation guide](INSTALL.md) and the [getting started](doc/getting-started.md) tutorial.
