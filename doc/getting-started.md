@@ -1,6 +1,6 @@
 ## Getting started
 
-This tutorial will help you to go through the basics to use Bit Core after you completed the [installation instructions](/INSTALL.md). You now have `bitd` or `bit-qt` executables available to run a node, and `bit-cli`/`bit-tx` tools to help you transact PEPE.
+This tutorial will help you to go through the basics to use Bit Core after you completed the [installation instructions](/INSTALL.md). You now have `bitd` or `bit-qt` executables available to run a node, and `bit-cli`/`bit-tx` tools to help you transact B1T.
 
 > **Note:** For simplicity, this guide assumes that executables can be found under the `PATH` environment variable.
 If needed, you can specify their location by typing `PATH=$PATH:/path/to/executables`, or prepend the full path to the command like:
@@ -63,7 +63,7 @@ Some commands are different, but it's possible to use the [bitcoin RPC API docum
 
 ### Creating a wallet
 
-To receive PEPE, you need an address that is securely derived from a private key through a series of automatic, cryptographic operations. The *address* can be shared with anyone to receive PEPE, but the *private key* is sensitive information that allows anyone that knows it to spend the PEPE on the associated address.
+To receive B1T, you need an address that is securely derived from a private key through a series of automatic, cryptographic operations. The *address* can be shared with anyone to receive B1T, but the *private key* is sensitive information that allows anyone that knows it to spend the B1T on the associated address.
 
 By default, the Bit Core software will automatically create an address for you and securely store the private key in the wallet file.
 
@@ -90,7 +90,7 @@ satoshi:~$ bit-cli backupwallet /path/of/wallet/backup
 
 **Tip:** Bit addresses start with the letter `P`.
 
-You now have two wallet addresses to share with other people to receive PEPE! Consider avoiding [address reuse](https://en.bitcoin.it/wiki/Address_reuse) for anonymity and security reasons.
+You now have two wallet addresses to share with other people to receive B1T! Consider avoiding [address reuse](https://en.bitcoin.it/wiki/Address_reuse) for anonymity and security reasons.
 
 ### Verifying your balance
 
@@ -111,7 +111,7 @@ satoshi:~$ bit-cli getbalance "*" 5
 
 ### Sending transactions
 
-Bit implements the [Unspent Transaction Output (UTXO)](https://en.wikipedia.org/wiki/Unspent_transaction_output) model to track which amounts of coin belong to an address. Owning PEPE means that you know the private key(s) to addresses that are associated with unspent outputs. To spend them, you have to compose a new transaction that spends the value from currently unspent outputs to new outputs.
+Bit implements the [Unspent Transaction Output (UTXO)](https://en.wikipedia.org/wiki/Unspent_transaction_output) model to track which amounts of coin belong to an address. Owning B1T means that you know the private key(s) to addresses that are associated with unspent outputs. To spend them, you have to compose a new transaction that spends the value from currently unspent outputs to new outputs.
 
 ##### sendtoaddress
 
@@ -370,8 +370,8 @@ A node can expose 2 different ports: one port for the **Peer to Peer Network** (
 
 | Function | mainnet | testnet | regtest |
 | :------- | ------: | ------: | ------: |
-| P2P      |   33874 |   44874 |   18444 |
-| RPC      |   33873 |   44873 |   18332 |
+| **P2P**  | 33317   | 44417   | 22217   |
+| **RPC**  | 33318   | 44418   | 22218   |
 
 To configure them use the `-port` and `-rpcport` parameters.
 
