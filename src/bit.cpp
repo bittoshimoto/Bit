@@ -128,23 +128,28 @@ CAmount GetBitBlockSubsidy(int nHeight, const Consensus::Params& consensusParams
 {
     static constexpr CAmount COIN = 100000000; // 1 coin = 100M satoshi
 
-    int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
+    // Premine: block 1
+    if (nHeight == 1) {
+        return 1115625 * COIN;   // 1 115 625 coins
+    }
 
-    // Stop rewards after 5 halvings
-    if (halvings >= 5)
+    // No mining reward before block 2
+    if (nHeight < 2) {
         return 0;
+    }
 
-    if (nHeight == 1)
-        return 600000 * COIN; // Premine block
+    // Compute how many halvings have occurred since block 2
+    int halvings = (nHeight - 2) / consensusParams.nSubsidyHalvingInterval;
+    // Stop rewards after 4 halvings
+    if (halvings >= 4) {
+        return 0;
+    }
 
-    if (nHeight >= 2 && nHeight <= 100000)
-        return 5 * COIN; // Blocks 2-100000
+    // Base subsidy: 2.5 coins = (5/2) * COIN
+    CAmount nSubsidy = (5 * COIN) / 2;
 
-    CAmount nSubsidy = 5 * COIN / 2; // Start with 2.5 coins per block after block 100000
+    // Apply halving (right‐shift)
+    nSubsidy >>= halvings;
 
-    nSubsidy >>= halvings; // Apply halving every 210k blocks
     return nSubsidy;
 }
-
-
-

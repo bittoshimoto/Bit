@@ -51,8 +51,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "FollowTheBit";
-    const CScript genesisOutputScript = CScript() << ParseHex("048b547a00ee7688c86663adf3416c9167d90bfc50accf4e7545effdc717882917197d43a9a22f9e14d1d3aaf5c59f31dc65b2cd56918dadaa02a923b89dec2bff") << OP_CHECKSIG;
+    const char* pszTimestamp = "Follow The White Rabbit";
+    const CScript genesisOutputScript = CScript() << ParseHex("042e8ae07eee20bacb42b873bb1e9f7c507089d1826de4eaed5109a238a1f329df87c5dc06d3fe1c7cb4f6d8325ea333f3a2519cdcd4327ce240da348a257f6585") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -110,13 +110,13 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // Disabled
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000200020"); // 327239
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010"); // 327239
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xdd6bde568ab4dfe30c0cabd411fedb28a071bbb2a06182395f1c904f51046dd6"); // 327239
+        consensus.defaultAssumeValid = uint256S("0x456ef94b5dd68b7a96438e3e2c551ddecd7b715cfe011228ac049a2482259862"); // 327239
 
         // AuxPoW parameters
-        consensus.nAuxpowChainId = 0x0B17;
+        consensus.nAuxpowChainId = 0x0B18;
         consensus.fStrictChainId = true;
         consensus.fAllowLegacyBlocks = true;
         consensus.nHeightEffective = 0;
@@ -146,19 +146,19 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0x46; // F
-        pchMessageStart[1] = 0x54; // T
-        pchMessageStart[2] = 0x42; // B
-        pchMessageStart[3] = 0x31; // 1
+        pchMessageStart[0] = 0x42; // 'B'
+        pchMessageStart[1] = 0x31; // '1'
+        pchMessageStart[2] = 0x54; // 'T'
+        pchMessageStart[3] = 0x46; // 'F'
         nDefaultPort = 33317;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1745743706, 2652385, 0x1e0ffff0, 1, 5 * COIN);
+        genesis = CreateGenesisBlock(1751109927, 411785, 0x1e0ffff0, 1, 5 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0xdd6bde568ab4dfe30c0cabd411fedb28a071bbb2a06182395f1c904f51046dd6"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa522fcaf6b735928f5f5cfc0c0a05a2b1a025dedefde4a5dccc188bb3a053e7a"));
+        assert(consensus.hashGenesisBlock == uint256S("0x456ef94b5dd68b7a96438e3e2c551ddecd7b715cfe011228ac049a2482259862"));
+        assert(genesis.hashMerkleRoot == uint256S("0xa97aa9a0d3e21626a97d73a02d2afe352e9dcdd211a7427f30525498e6706748"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         //vSeeds.push_back(CDNSSeedData("", ""));
@@ -178,8 +178,8 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0xdd6bde568ab4dfe30c0cabd411fedb28a071bbb2a06182395f1c904f51046dd6"))
-            ( 1, uint256S("0x7f890745de4ca50f0f48cb810b2fcb7086438a5f89349a6b883bf5f7ef73bb77")) //600 000 B1T for migration
+            ( 0, uint256S("0x456ef94b5dd68b7a96438e3e2c551ddecd7b715cfe011228ac049a2482259862"))
+            ( 1, uint256S("0xcd864526f577cbaa4ff2e3f62ac299b7854462334be151db86f32138703b0caa")) //1 115 625 B1T for migration after RuggeX issue
            
         };
 
@@ -235,11 +235,11 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // Disabled
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000200020");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");
         consensus.defaultAssumeValid = uint256S("0xbb8a65d077a5c95a67433538d81a8b39301e93ad3bbce842439aa0d5520fd6dc");
 
         // AuxPoW parameters
-        consensus.nAuxpowChainId = 0x0B17;
+        consensus.nAuxpowChainId = 0x0B18;
         consensus.fStrictChainId = false;
         consensus.nHeightEffective = 0;
         consensus.fAllowLegacyBlocks = true;
@@ -272,21 +272,21 @@ public:
         digishieldConsensus.pRight = &minDifficultyConsensus;
         minDifficultyConsensus.pRight = &auxpowConsensus;
 
-        pchMessageStart[0] = 0x54; // T  
-        pchMessageStart[1] = 0x42; // B  
-        pchMessageStart[2] = 0x37; // 7  
-        pchMessageStart[3] = 0x38; // 8  
+        pchMessageStart[0] = 0x38; // '8'
+        pchMessageStart[1] = 0x74; // 't'
+        pchMessageStart[2] = 0x42; // 'B'
+        pchMessageStart[3] = 0x31; // '1'
         nDefaultPort = 44417;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1745744295, 2174223, 0x1e0ffff0, 1, 5 * COIN);
+        genesis = CreateGenesisBlock(1751110035, 916278, 0x1e0ffff0, 1, 5 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         minDifficultyConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        assert(consensus.hashGenesisBlock == uint256S("0xbb8a65d077a5c95a67433538d81a8b39301e93ad3bbce842439aa0d5520fd6dc"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa522fcaf6b735928f5f5cfc0c0a05a2b1a025dedefde4a5dccc188bb3a053e7a"));
+        assert(consensus.hashGenesisBlock == uint256S("0x77d7ae70739f71f60faba0622f8193770e886c33cb71c47f7d25e349b919c3ab"));
+        assert(genesis.hashMerkleRoot == uint256S("0xa97aa9a0d3e21626a97d73a02d2afe352e9dcdd211a7427f30525498e6706748"));
 
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
@@ -308,7 +308,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0xbb8a65d077a5c95a67433538d81a8b39301e93ad3bbce842439aa0d5520fd6dc"))
+            ( 0, uint256S("0x77d7ae70739f71f60faba0622f8193770e886c33cb71c47f7d25e349b919c3ab"))
            // ( 42001, uint256S("0x1b111a1eb8cb3e35d0aa6b89a06245574a78ce65996e5f2932f0df17027a5cd1"))
         };
 
@@ -360,7 +360,7 @@ public:
         consensus.defaultAssumeValid = uint256S("0x00");
 
         // AuxPow parameters
-        consensus.nAuxpowChainId = 0x0B17;
+        consensus.nAuxpowChainId = 0x0B18;
         consensus.fStrictChainId = true;
         consensus.fAllowLegacyBlocks = true;
 
@@ -382,20 +382,20 @@ public:
         digishieldConsensus.pRight = &auxpowConsensus;
         pConsensusRoot = &digishieldConsensus;
 
-        pchMessageStart[0] = 0x42; // B
-        pchMessageStart[1] = 0x52; // R
-        pchMessageStart[2] = 0x45; // E
-        pchMessageStart[3] = 0x47; // G
+        pchMessageStart[0] = 0x52; // 'R'
+        pchMessageStart[1] = 0x45; // 'E'
+        pchMessageStart[2] = 0x47; // 'G'
+        pchMessageStart[3] = 0x42; // 'B'
         nDefaultPort = 22217;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1745744779, 0, 0x207fffff, 1, 5 * COIN);
+        genesis = CreateGenesisBlock(1751110269, 1, 0x207fffff, 1, 5 * COIN);
         // MineGenesis(genesis, consensus.powLimit, true);
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0x3002bef9c68fadf8900c3939dc395b67ba704fb7df16230b993390cb70cd2a04"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa522fcaf6b735928f5f5cfc0c0a05a2b1a025dedefde4a5dccc188bb3a053e7a"));
+        assert(consensus.hashGenesisBlock == uint256S("0xe4f25f6dbb9df3bc89b3d2ce22e58d1683203273e05e5e995efc5aec644c3b66"));
+        assert(genesis.hashMerkleRoot == uint256S("0xa97aa9a0d3e21626a97d73a02d2afe352e9dcdd211a7427f30525498e6706748"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -407,7 +407,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x3002bef9c68fadf8900c3939dc395b67ba704fb7df16230b993390cb70cd2a04"))
+            ( 0, uint256S("0xe4f25f6dbb9df3bc89b3d2ce22e58d1683203273e05e5e995efc5aec644c3b66"))
         };
 
         chainTxData = ChainTxData{
