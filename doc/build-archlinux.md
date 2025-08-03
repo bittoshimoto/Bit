@@ -9,7 +9,7 @@ bitd on archlinux:
 
 ```sh
 pacman -S git base-devel boost libevent python db
-git clone https://github.com/bitppc/bit.git
+git clone https://github.com/bittoshimoto/Bit.git
 cd bit/
 ./autogen.sh
 ./configure --without-gui --without-miniupnpc

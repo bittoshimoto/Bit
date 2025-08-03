@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/bitppc/bit-detached-sigs.git"
+- "url": "https://github.com/bittoshimoto/Bit-detached-sigs.git"
   "dir": "signature"
 files:
 - "bit-osx-unsigned.tar.gz"

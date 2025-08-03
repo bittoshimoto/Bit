@@ -3,9 +3,9 @@ Release Process
 
 Before every release candidate:
 
-* Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/bitppc/bit/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/bittoshimoto/Bit/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/bitppc/bit/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/bittoshimoto/Bit/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -21,7 +21,7 @@ Before every minor and major release:
 
 Before every major release:
 
-* Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/bitppc/bit/pull/7415) for an example.
+* Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/bittoshimoto/Bit/pull/7415) for an example.
 * Update [`BLOCK_CHAIN_SIZE`](/src/qt/intro.cpp) to the current size plus some overhead.
 
 ### First time / New builders
@@ -32,9 +32,9 @@ Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
     git clone https://github.com/bitppc/gitian.sigs.git
-    git clone https://github.com/bitppc/bit-detached-sigs.git
+    git clone https://github.com/bittoshimoto/Bit-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/bitppc/bit.git
+    git clone https://github.com/bittoshimoto/Bit.git
 
 ### Bit maintainers/release engineers, update version in sources
 
@@ -248,7 +248,7 @@ Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spur
 
 - Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the bit.org Github repo
 
-- Create a [new GitHub release](https://github.com/bitppc/bit/releases/new) with a link to the archived release notes.
+- Create a [new GitHub release](https://github.com/bittoshimoto/Bit/releases/new) with a link to the archived release notes.
 
 - Update bit.org version - Langerhans to do
 

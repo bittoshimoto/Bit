@@ -30,7 +30,7 @@ Build Bit Core
 
 1. Clone the bit source code and cd into `bit`
 
-        git clone https://github.com/bitppc/bit
+        git clone https://github.com/bittoshimoto/Bit
         cd bit
 
 2.  Build bit:
@@ -97,4 +97,4 @@ Notes
 
 * Tested on OS X 10.8 through 10.12 on 64-bit Intel processors only.
 
-* Building with downloaded Qt binaries is not officially supported. See the notes in [#7714](https://github.com/bitppc/bit/issues/7714)
+* Building with downloaded Qt binaries is not officially supported. See the notes in [#7714](https://github.com/bittoshimoto/Bit/issues/7714)

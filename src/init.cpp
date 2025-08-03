@@ -514,8 +514,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/bitppc/bit>";
-    const std::string URL_WEBSITE = "<https://bit.org>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/bittoshimoto/Bit>";
+    const std::string URL_WEBSITE = "<https://b1tcore.org>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2013, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

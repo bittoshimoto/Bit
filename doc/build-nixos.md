@@ -5,7 +5,7 @@ of the latest changes on NixOS.
 
 Clone and enter the repo:
 
-    $ git clone https://github.com/bitppc/bit
+    $ git clone https://github.com/bittoshimoto/Bit
     $ cd bit
 
 Enter the `nix-shell` environment with all the Bit dependencies present:

@@ -8,7 +8,7 @@ packages:
 - "libssl-dev"
 - "autoconf"
 remotes:
-- "url": "https://github.com/bitppc/bit-detached-sigs.git"
+- "url": "https://github.com/bittoshimoto/Bit-detached-sigs.git"
   "dir": "signature"
 files:
 - "osslsigncode_1.7.1.orig.tar.gz"

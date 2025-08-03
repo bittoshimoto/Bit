@@ -37,7 +37,7 @@ test=false
 # Other Basic variables
 SIGNER=
 VERSION=
-url=https://github.com/bitppc/bit
+url=https://github.com/bittoshimoto/Bit
 proc=2
 mem=2000
 scriptName=$(basename -- "$0")
@@ -70,7 +70,7 @@ Options:
 -j proc             Number of processes to use. Default $proc
 -m n                Memory to allocate in MiB. Default $mem
 -c|--commit         Indicate that the version argument is for a commit or branch
--u|--url repo       Specify the URL of the repository. Default is https://github.com/bitppc/bit
+-u|--url repo       Specify the URL of the repository. Default is https://github.com/bittoshimoto/Bit
 --test              CI TEST. Uses Docker
 -h|--help           Print this help message
 EOF
@@ -259,7 +259,7 @@ fi
 
 if [[ $setup == true ]]; then
     git clone https://github.com/bitppc/gitian.sigs.git
-    git clone https://github.com/bitppc/bit-detached-sigs.git
+    git clone https://github.com/bittoshimoto/Bit-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
 
     pushd ./gitian-builder
